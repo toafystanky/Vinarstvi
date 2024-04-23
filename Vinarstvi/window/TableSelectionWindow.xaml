@@ -1,0 +1,11 @@
+<Window x:Class="Vinarstvi.window.TableSelectionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Table Selection" Height="380" Width="400"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel x:Name="tablePanel" Margin="10"/>
+        </ScrollViewer>
+    </Grid>
+</Window>

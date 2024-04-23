@@ -1,0 +1,65 @@
+\chapter{About}
+\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e}{}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e}\index{About@{About}}
+\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e_autotoc_md5}%
+\Hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e_autotoc_md5}%
+ My\+SQL provides connectivity for client applications developed in .NET compatible programming languages with My\+SQL Connector/\+NET through a series of packages.
+
+My\+Sql.\+Data is the core package of Connector/\+NET. It is compatible with .NET Framework 4.\+6+ and .NET 6.\+0+ and provides classic My\+SQL protocol and My\+SQL X Dev\+API capabilities.
+
+More information at \href{https://dev.mysql.com/doc/connector-net/en/}{\texttt{ My\+SQL Connector/\+NET documentation}}.\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e_autotoc_md6}{}\doxysection{\texorpdfstring{How to use}{How to use}}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{MySql.Data.MySqlClient.MySqlConnection\ myConnection;}
+\DoxyCodeLine{string\ myConnectionString;}
+\DoxyCodeLine{//set\ the\ correct\ values\ for\ your\ server,\ user,\ password\ and\ database\ name}
+\DoxyCodeLine{myConnectionString\ =\ "{}server=127.0.0.1;uid=root;pwd=12345;database=test"{};}
+\DoxyCodeLine{}
+\DoxyCodeLine{try}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ myConnection\ =\ new\ MySql.Data.MySqlClient.MySqlConnection(myConnectionString);}
+\DoxyCodeLine{\ \ //open\ a\ connection}
+\DoxyCodeLine{\ \ myConnection.Open();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ //\ create\ a\ MySQL\ command\ and\ set\ the\ SQL\ statement\ with\ parameters}
+\DoxyCodeLine{\ \ MySqlCommand\ myCommand\ =\ new\ MySqlCommand();}
+\DoxyCodeLine{\ \ myCommand.Connection\ =\ myConnection;}
+\DoxyCodeLine{\ \ myCommand.CommandText\ =\ @"{}SELECT\ *\ FROM\ clients\ WHERE\ client\_id\ =\ @clientId;"{};}
+\DoxyCodeLine{\ \ myCommand.Parameters.AddWithValue("{}@clientId"{},\ clientId);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ //\ execute\ the\ command\ and\ read\ the\ results}
+\DoxyCodeLine{\ \ using\ var\ myReader\ =\ myCommand.ExecuteReader()}
+\DoxyCodeLine{\ \ \{}
+\DoxyCodeLine{\ \ \ \ while\ (myReader.Read())}
+\DoxyCodeLine{\ \ \ \ \{}
+\DoxyCodeLine{\ \ \ \ \ \ var\ id\ =\ myReader.GetInt32("{}client\_id"{});}
+\DoxyCodeLine{\ \ \ \ \ \ var\ name\ =\ myReader.GetString("{}client\_name"{});}
+\DoxyCodeLine{\ \ \ \ \ \ //\ ...}
+\DoxyCodeLine{\ \ \ \ \}}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ myConnection.Close();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{catch\ (MySql.Data.MySqlClient.MySqlException\ ex)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ MessageBox.Show(ex.Message);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e_autotoc_md7}{}\doxysection{\texorpdfstring{Related Packages}{Related Packages}}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyItemize}
+\item Entity Framework Core\+: \href{https://www.nuget.org/packages/MySql.EntityFrameworkCore/}{\texttt{ My\+Sql.\+Entity\+Framework\+Core}}
+\item Entity Framework\+: \href{https://www.nuget.org/packages/MySql.Data.EntityFramework}{\texttt{ My\+Sql.\+Data.\+Entity\+Framework}}
+\item Web\+: \href{https://www.nuget.org/packages/MySql.Web}{\texttt{ My\+Sql.\+Web}}
+\item Open\+Telemetry\+: \href{https://www.nuget.org/packages/MySql.Data.OpenTelemetry}{\texttt{ My\+Sql.\+Data.\+Open\+Telemetry}}
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e_autotoc_md8}{}\doxysection{\texorpdfstring{Contributing}{Contributing}}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e_autotoc_md8}
+There are a few ways to contribute to the Connector/\+NET code. Please refer to the \href{https://github.com/mysql/mysql-connector-net/blob/8.x/CONTRIBUTING.md}{\texttt{ contributing guidelines}} for additional information.\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{\texorpdfstring{Additional Resources}{Additional Resources}}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_8_data_88_83_80_2_r_e_a_d_m_e_autotoc_md9}
+
+\begin{DoxyItemize}
+\item \href{http://www.mysql.com/}{\texttt{ My\+SQL}}
+\item \href{https://github.com/mysql/mysql-connector-net}{\texttt{ My\+SQL Connector/\+NET Git\+Hub}}
+\item \href{https://dev.mysql.com/doc/dev/connector-net/latest/}{\texttt{ My\+SQL Connector/\+NET API}}
+\item \href{https://forums.mysql.com/list.php?38}{\texttt{ My\+SQL Connector/\+NET Discussion Forum}}
+\item \href{https://bugs.mysql.com}{\texttt{ My\+SQL Public Bug Tracker}}
+\item \href{https://mysqlcommunity.slack.com/messages/connectors}{\texttt{ {\ttfamily \#connectors} channel in My\+SQL Community Slack}} (\href{https://lefred.be/mysql-community-on-slack/}{\texttt{ Sign-\/up}} required when not using an Oracle account)
+\item For more information about this and other My\+SQL products, please visit \href{http://www.mysql.com/about/contact/}{\texttt{ My\+SQL Contact \& Questions}}. 
+\end{DoxyItemize}

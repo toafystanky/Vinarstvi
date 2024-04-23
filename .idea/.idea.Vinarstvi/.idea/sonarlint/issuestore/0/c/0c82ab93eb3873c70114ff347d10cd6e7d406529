@@ -1,0 +1,7 @@
+
+csharpsquid:S1854ø"=Remove this useless assignment to local variable 'tableName'.(Ï±ŸºJ$61b34d7a-838a-4e87-8084-36ceb185e8f6
+ecsharpsquid:S2933"Make '_dbManager' 'readonly'.(Œ¶µœøÿÿÿÿJ$10464bce-d01b-4bd8-a6ac-feaf79beb79d
+—csharpsquid:S6602È"N"Find" method should be used instead of the "FirstOrDefault" extension method.(ĞŒ¤İıÿÿÿÿJ$e295f28c-700f-4ee7-8458-0eac91b8ad7e
+rcsharpsquid:S1066Ğ"/Merge this if statement with the enclosing one.(­ëÕ9J$30d89d97-69ba-4b3b-ae5e-5fe6b1a0411e
+wcsharpsquid:S1172™"3Remove this unused method parameter 'propertyName'.(ºåô–J$2ade2381-70f0-4240-af20-63031ff17966
+vcsharpsquid:S1481"2Remove the unused local variable 'mySqlException'.(¢ÈÏîJ$4cdca05e-c93b-4cd5-a5d1-0f18ecbead24

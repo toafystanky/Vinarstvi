@@ -1,0 +1,280 @@
+\doxysection{Vinarstvi.\+controller.\+Database\+Manager Class Reference}
+\hypertarget{class_vinarstvi_1_1controller_1_1_database_manager}{}\label{class_vinarstvi_1_1controller_1_1_database_manager}\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+
+
+Manages database operations such as querying, inserting, updating, and deleting records.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_a4b2b6d389912d6f792c977fc1fa7e912}{Database\+Manager}} (\mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_configuration_manager}{Configuration\+Manager}} config)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the Database\+Manager class with the provided configuration. \end{DoxyCompactList}\item 
+IDictionary$<$ string, object $>$ \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_a89927caaa564a5cef44585ba3d12d11d}{Get\+Entry\+By\+Id}} (string table\+Name, int id)
+\begin{DoxyCompactList}\small\item\em Retrieves a single database entry by its ID from the specified table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_ab7454365f7abc5d4cbc3b9972a7d9cb0}{Import\+Data$<$ T $>$}} (string file\+Path, IDictionary$<$ string, Type $>$ table\+Attributes)
+\begin{DoxyCompactList}\small\item\em Imports data from a CSV file into the specified database table. \end{DoxyCompactList}\item 
+Data\+Table \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_a03e32d68396665e5762ab3b1aaf1a32d}{Get\+All\+Records}} (string table\+Name)
+\begin{DoxyCompactList}\small\item\em Retrieves all records from the specified table. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_aa2486d3edb5cce976198a32501c5a12e}{Get\+Table\+Name}} (Type entity\+Type)
+\begin{DoxyCompactList}\small\item\em Gets the table name associated with the specified entity type. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_a1720ec4f53a4b0ee64e3dbcd7b98af74}{Get\+Table\+Name$<$ T $>$}} (IDictionary$<$ string, object $>$ record, IDictionary$<$ string, Type $>$ table\+Attributes)
+\begin{DoxyCompactList}\small\item\em Gets the table name based on the headers of the record and the attributes of the table. \end{DoxyCompactList}\item 
+Data\+Table \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_abd8d9d2fda26b1eaee0fecf18166c58e}{Get\+Summary\+Data}} (string view\+Name)
+\begin{DoxyCompactList}\small\item\em Retrieves summary data from the specified view. \end{DoxyCompactList}\item 
+Data\+Table \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_a0c5939aeb54f2d1ac12b5578999744e4}{Get\+Additional\+Tables}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the names of additional tables from the database schema excluding specific tables. \end{DoxyCompactList}\item 
+List$<$ string $>$ \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_a38ec71c9d37ae7b2d1ca54f1f8ed5cc7}{Get\+Table\+List}} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a list of table names from the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_ab14ffb4cb4c24724d8bf3deeeef2935e}{Delete\+Record\+By\+Id}} (string entity\+Name, int id)
+\begin{DoxyCompactList}\small\item\em Deletes a record from the specified entity table by its ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_a19df7a1c0a1e6254137c6eeeb826754f}{Update\+Row\+In\+Database}} (object edited\+Object, string table\+Name, int id)
+\begin{DoxyCompactList}\small\item\em Updates a row in the database based on the provided object, table name, and ID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{_database_manager_methods_8cs_afdd8b7af50ca77b2600f0376ac521e42}{My\+Sql\+Connection}} \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_a2755abd0998026208f4097f12d720455}{Get\+Connection}} ()
+\begin{DoxyCompactList}\small\item\em Creates and returns a new \doxylink{_database_manager_methods_8cs_afdd8b7af50ca77b2600f0376ac521e42}{My\+Sql\+Connection} using the current connection string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_a9a713c12bdc11bf5ac9aa298afd660fb}{Connection\+String}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the connection string used to connect to the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages database operations such as querying, inserting, updating, and deleting records. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_a4b2b6d389912d6f792c977fc1fa7e912}\label{class_vinarstvi_1_1controller_1_1_database_manager_a4b2b6d389912d6f792c977fc1fa7e912} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!DatabaseManager@{DatabaseManager}}
+\index{DatabaseManager@{DatabaseManager}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{DatabaseManager()}{DatabaseManager()}}
+{\footnotesize\ttfamily Vinarstvi.\+controller.\+Database\+Manager.\+Database\+Manager (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_configuration_manager}{Configuration\+Manager}}}]{config }\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the Database\+Manager class with the provided configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em config} & The configuration settings used to construct the connection string.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_ab14ffb4cb4c24724d8bf3deeeef2935e}\label{class_vinarstvi_1_1controller_1_1_database_manager_ab14ffb4cb4c24724d8bf3deeeef2935e} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!DeleteRecordById@{DeleteRecordById}}
+\index{DeleteRecordById@{DeleteRecordById}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{DeleteRecordById()}{DeleteRecordById()}}
+{\footnotesize\ttfamily void Vinarstvi.\+controller.\+Database\+Manager.\+Delete\+Record\+By\+Id (\begin{DoxyParamCaption}\item[{string}]{entity\+Name,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Deletes a record from the specified entity table by its ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+Name} & The name of the entity table.\\
+\hline
+{\em id} & The ID of the record to delete.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_a0c5939aeb54f2d1ac12b5578999744e4}\label{class_vinarstvi_1_1controller_1_1_database_manager_a0c5939aeb54f2d1ac12b5578999744e4} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!GetAdditionalTables@{GetAdditionalTables}}
+\index{GetAdditionalTables@{GetAdditionalTables}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{GetAdditionalTables()}{GetAdditionalTables()}}
+{\footnotesize\ttfamily Data\+Table Vinarstvi.\+controller.\+Database\+Manager.\+Get\+Additional\+Tables (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves the names of additional tables from the database schema excluding specific tables. 
+
+\begin{DoxyReturn}{Returns}
+A Data\+Table containing the names of additional tables.
+\end{DoxyReturn}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_a03e32d68396665e5762ab3b1aaf1a32d}\label{class_vinarstvi_1_1controller_1_1_database_manager_a03e32d68396665e5762ab3b1aaf1a32d} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!GetAllRecords@{GetAllRecords}}
+\index{GetAllRecords@{GetAllRecords}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{GetAllRecords()}{GetAllRecords()}}
+{\footnotesize\ttfamily Data\+Table Vinarstvi.\+controller.\+Database\+Manager.\+Get\+All\+Records (\begin{DoxyParamCaption}\item[{string}]{table\+Name }\end{DoxyParamCaption})}
+
+
+
+Retrieves all records from the specified table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Name} & The name of the table from which to retrieve records.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Data\+Table containing all records from the specified table.
+\end{DoxyReturn}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_a2755abd0998026208f4097f12d720455}\label{class_vinarstvi_1_1controller_1_1_database_manager_a2755abd0998026208f4097f12d720455} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!GetConnection@{GetConnection}}
+\index{GetConnection@{GetConnection}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{GetConnection()}{GetConnection()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{_database_manager_methods_8cs_afdd8b7af50ca77b2600f0376ac521e42}{My\+Sql\+Connection}} Vinarstvi.\+controller.\+Database\+Manager.\+Get\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates and returns a new \doxylink{_database_manager_methods_8cs_afdd8b7af50ca77b2600f0376ac521e42}{My\+Sql\+Connection} using the current connection string. 
+
+\begin{DoxyReturn}{Returns}
+A new \doxylink{_database_manager_methods_8cs_afdd8b7af50ca77b2600f0376ac521e42}{My\+Sql\+Connection} object.
+\end{DoxyReturn}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_a89927caaa564a5cef44585ba3d12d11d}\label{class_vinarstvi_1_1controller_1_1_database_manager_a89927caaa564a5cef44585ba3d12d11d} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!GetEntryById@{GetEntryById}}
+\index{GetEntryById@{GetEntryById}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{GetEntryById()}{GetEntryById()}}
+{\footnotesize\ttfamily IDictionary$<$ string, object $>$ Vinarstvi.\+controller.\+Database\+Manager.\+Get\+Entry\+By\+Id (\begin{DoxyParamCaption}\item[{string}]{table\+Name,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Retrieves a single database entry by its ID from the specified table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table\+Name} & The name of the table to retrieve the entry from.\\
+\hline
+{\em id} & The ID of the entry to retrieve.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A dictionary containing the column names and their corresponding values for the retrieved entry.
+\end{DoxyReturn}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_abd8d9d2fda26b1eaee0fecf18166c58e}\label{class_vinarstvi_1_1controller_1_1_database_manager_abd8d9d2fda26b1eaee0fecf18166c58e} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!GetSummaryData@{GetSummaryData}}
+\index{GetSummaryData@{GetSummaryData}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{GetSummaryData()}{GetSummaryData()}}
+{\footnotesize\ttfamily Data\+Table Vinarstvi.\+controller.\+Database\+Manager.\+Get\+Summary\+Data (\begin{DoxyParamCaption}\item[{string}]{view\+Name }\end{DoxyParamCaption})}
+
+
+
+Retrieves summary data from the specified view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em view\+Name} & The name of the database view from which to retrieve summary data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A Data\+Table containing the summary data from the specified view.
+\end{DoxyReturn}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_a38ec71c9d37ae7b2d1ca54f1f8ed5cc7}\label{class_vinarstvi_1_1controller_1_1_database_manager_a38ec71c9d37ae7b2d1ca54f1f8ed5cc7} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!GetTableList@{GetTableList}}
+\index{GetTableList@{GetTableList}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{GetTableList()}{GetTableList()}}
+{\footnotesize\ttfamily List$<$ string $>$ Vinarstvi.\+controller.\+Database\+Manager.\+Get\+Table\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Retrieves a list of table names from the database. 
+
+\begin{DoxyReturn}{Returns}
+A list of table names.
+\end{DoxyReturn}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_aa2486d3edb5cce976198a32501c5a12e}\label{class_vinarstvi_1_1controller_1_1_database_manager_aa2486d3edb5cce976198a32501c5a12e} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!GetTableName@{GetTableName}}
+\index{GetTableName@{GetTableName}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{GetTableName()}{GetTableName()}}
+{\footnotesize\ttfamily string Vinarstvi.\+controller.\+Database\+Manager.\+Get\+Table\+Name (\begin{DoxyParamCaption}\item[{Type}]{entity\+Type }\end{DoxyParamCaption})}
+
+
+
+Gets the table name associated with the specified entity type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entity\+Type} & The type of the entity.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The table name associated with the entity type, or {\ttfamily null} if the entity type is {\ttfamily null}.
+\end{DoxyReturn}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_a1720ec4f53a4b0ee64e3dbcd7b98af74}\label{class_vinarstvi_1_1controller_1_1_database_manager_a1720ec4f53a4b0ee64e3dbcd7b98af74} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!GetTableName$<$ T $>$@{GetTableName$<$ T $>$}}
+\index{GetTableName$<$ T $>$@{GetTableName$<$ T $>$}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{GetTableName$<$ T $>$()}{GetTableName< T >()}}
+{\footnotesize\ttfamily string \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_database_manager_aa2486d3edb5cce976198a32501c5a12e}{Vinarstvi.\+controller.\+Database\+Manager.\+Get\+Table\+Name}}$<$ T $>$ (\begin{DoxyParamCaption}\item[{IDictionary$<$ string, object $>$}]{record,  }\item[{IDictionary$<$ string, Type $>$}]{table\+Attributes }\end{DoxyParamCaption})}
+
+
+
+Gets the table name based on the headers of the record and the attributes of the table. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the record.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em record} & The record containing headers and values.\\
+\hline
+{\em table\+Attributes} & The attributes of the table.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The table name that matches the headers of the record and the attributes of the table, or {\ttfamily null} if no match is found.
+\end{DoxyReturn}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_ab7454365f7abc5d4cbc3b9972a7d9cb0}\label{class_vinarstvi_1_1controller_1_1_database_manager_ab7454365f7abc5d4cbc3b9972a7d9cb0} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!ImportData$<$ T $>$@{ImportData$<$ T $>$}}
+\index{ImportData$<$ T $>$@{ImportData$<$ T $>$}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{ImportData$<$ T $>$()}{ImportData< T >()}}
+{\footnotesize\ttfamily void Vinarstvi.\+controller.\+Database\+Manager.\+Import\+Data$<$ T $>$ (\begin{DoxyParamCaption}\item[{string}]{file\+Path,  }\item[{IDictionary$<$ string, Type $>$}]{table\+Attributes }\end{DoxyParamCaption})}
+
+
+
+Imports data from a CSV file into the specified database table. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of entity to import.\\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path to the CSV file containing the data to import.\\
+\hline
+{\em table\+Attributes} & A dictionary mapping table names to their corresponding attributes.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_a19df7a1c0a1e6254137c6eeeb826754f}\label{class_vinarstvi_1_1controller_1_1_database_manager_a19df7a1c0a1e6254137c6eeeb826754f} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!UpdateRowInDatabase@{UpdateRowInDatabase}}
+\index{UpdateRowInDatabase@{UpdateRowInDatabase}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{UpdateRowInDatabase()}{UpdateRowInDatabase()}}
+{\footnotesize\ttfamily void Vinarstvi.\+controller.\+Database\+Manager.\+Update\+Row\+In\+Database (\begin{DoxyParamCaption}\item[{object}]{edited\+Object,  }\item[{string}]{table\+Name,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Updates a row in the database based on the provided object, table name, and ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edited\+Object} & The object containing the updated values.\\
+\hline
+{\em table\+Name} & The name of the table to update.\\
+\hline
+{\em id} & The ID of the row to update.\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_database_manager_a9a713c12bdc11bf5ac9aa298afd660fb}\label{class_vinarstvi_1_1controller_1_1_database_manager_a9a713c12bdc11bf5ac9aa298afd660fb} 
+\index{Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}!ConnectionString@{ConnectionString}}
+\index{ConnectionString@{ConnectionString}!Vinarstvi.controller.DatabaseManager@{Vinarstvi.controller.DatabaseManager}}
+\doxysubsubsection{\texorpdfstring{ConnectionString}{ConnectionString}}
+{\footnotesize\ttfamily string Vinarstvi.\+controller.\+Database\+Manager.\+Connection\+String\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the connection string used to connect to the database. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_database_manager_8cs}{Database\+Manager.\+cs}}\end{DoxyCompactItemize}

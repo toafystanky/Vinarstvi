@@ -1,0 +1,9 @@
+architektura: 
+    - vlastní
+návrhové vzory:
+Separation of Concerns (SoC):
+    - The class appears to separate concerns related to database operations from other parts of the application. 
+      It focuses on tasks such as querying, inserting, updating, and deleting records in the database.
+Single Responsibility Principle (SRP):
+    - Each method in the DatabaseManager class seems to have a single responsibility related to database management tasks, 
+      such as importing data, retrieving records, updating rows, and deleting records.

@@ -1,0 +1,116 @@
+\doxysection{Vinarstvi.\+controller.\+Configuration\+Manager Class Reference}
+\hypertarget{class_vinarstvi_1_1controller_1_1_configuration_manager}{}\label{class_vinarstvi_1_1controller_1_1_configuration_manager}\index{Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}}
+
+
+Manages configuration settings for the application.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_configuration_manager}{Configuration\+Manager}} \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_configuration_manager_aee88220db88e2aaca0cd3f5f69870be6}{Load\+Configuration}} (string file\+Path)
+\begin{DoxyCompactList}\small\item\em Loads configuration settings from the specified file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_configuration_manager_afa6ea6d9fdaf90cbe141f4c4ee0403c9}{Database\+Host}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the host name or IP address of the database server. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_configuration_manager_ae852273e1820d12ef53a87eb3747028b}{Database\+Port}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the port number of the database server. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_configuration_manager_a4338a4a8c2ce8604c8d7fdfea59c0c3a}{Database\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the database. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_configuration_manager_ab7596d8a60142f2de97f4b66fa314413}{Username}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the username used to connect to the database. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_configuration_manager_a9953313401c1f477a5a06dcb16302b22}{Password}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the password used to connect to the database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages configuration settings for the application. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_configuration_manager_aee88220db88e2aaca0cd3f5f69870be6}\label{class_vinarstvi_1_1controller_1_1_configuration_manager_aee88220db88e2aaca0cd3f5f69870be6} 
+\index{Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}!LoadConfiguration@{LoadConfiguration}}
+\index{LoadConfiguration@{LoadConfiguration}!Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}}
+\doxysubsubsection{\texorpdfstring{LoadConfiguration()}{LoadConfiguration()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_vinarstvi_1_1controller_1_1_configuration_manager}{Configuration\+Manager}} Vinarstvi.\+controller.\+Configuration\+Manager.\+Load\+Configuration (\begin{DoxyParamCaption}\item[{string}]{file\+Path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Loads configuration settings from the specified file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path to the configuration file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An instance of Configuration\+Manager containing the loaded configuration settings.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em File\+Not\+Found\+Exception} & Thrown when the specified configuration file does not exist.\\
+\hline
+{\em Json\+Exception} & Thrown when an error occurs during JSON deserialization.\\
+\hline
+{\em Exception} & Thrown when an error occurs while loading the configuration.\\
+\hline
+\end{DoxyExceptions}
+
+
+\doxysubsection{Property Documentation}
+\Hypertarget{class_vinarstvi_1_1controller_1_1_configuration_manager_afa6ea6d9fdaf90cbe141f4c4ee0403c9}\label{class_vinarstvi_1_1controller_1_1_configuration_manager_afa6ea6d9fdaf90cbe141f4c4ee0403c9} 
+\index{Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}!DatabaseHost@{DatabaseHost}}
+\index{DatabaseHost@{DatabaseHost}!Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}}
+\doxysubsubsection{\texorpdfstring{DatabaseHost}{DatabaseHost}}
+{\footnotesize\ttfamily string Vinarstvi.\+controller.\+Configuration\+Manager.\+Database\+Host\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the host name or IP address of the database server. 
+
+\Hypertarget{class_vinarstvi_1_1controller_1_1_configuration_manager_a4338a4a8c2ce8604c8d7fdfea59c0c3a}\label{class_vinarstvi_1_1controller_1_1_configuration_manager_a4338a4a8c2ce8604c8d7fdfea59c0c3a} 
+\index{Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}!DatabaseName@{DatabaseName}}
+\index{DatabaseName@{DatabaseName}!Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}}
+\doxysubsubsection{\texorpdfstring{DatabaseName}{DatabaseName}}
+{\footnotesize\ttfamily string Vinarstvi.\+controller.\+Configuration\+Manager.\+Database\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the name of the database. 
+
+\Hypertarget{class_vinarstvi_1_1controller_1_1_configuration_manager_ae852273e1820d12ef53a87eb3747028b}\label{class_vinarstvi_1_1controller_1_1_configuration_manager_ae852273e1820d12ef53a87eb3747028b} 
+\index{Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}!DatabasePort@{DatabasePort}}
+\index{DatabasePort@{DatabasePort}!Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}}
+\doxysubsubsection{\texorpdfstring{DatabasePort}{DatabasePort}}
+{\footnotesize\ttfamily int Vinarstvi.\+controller.\+Configuration\+Manager.\+Database\+Port\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the port number of the database server. 
+
+\Hypertarget{class_vinarstvi_1_1controller_1_1_configuration_manager_a9953313401c1f477a5a06dcb16302b22}\label{class_vinarstvi_1_1controller_1_1_configuration_manager_a9953313401c1f477a5a06dcb16302b22} 
+\index{Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}!Password@{Password}}
+\index{Password@{Password}!Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}}
+\doxysubsubsection{\texorpdfstring{Password}{Password}}
+{\footnotesize\ttfamily string Vinarstvi.\+controller.\+Configuration\+Manager.\+Password\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the password used to connect to the database. 
+
+\Hypertarget{class_vinarstvi_1_1controller_1_1_configuration_manager_ab7596d8a60142f2de97f4b66fa314413}\label{class_vinarstvi_1_1controller_1_1_configuration_manager_ab7596d8a60142f2de97f4b66fa314413} 
+\index{Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}!Username@{Username}}
+\index{Username@{Username}!Vinarstvi.controller.ConfigurationManager@{Vinarstvi.controller.ConfigurationManager}}
+\doxysubsubsection{\texorpdfstring{Username}{Username}}
+{\footnotesize\ttfamily string Vinarstvi.\+controller.\+Configuration\+Manager.\+Username\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the username used to connect to the database. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_configuration_manager_8cs}{Configuration\+Manager.\+cs}}\end{DoxyCompactItemize}

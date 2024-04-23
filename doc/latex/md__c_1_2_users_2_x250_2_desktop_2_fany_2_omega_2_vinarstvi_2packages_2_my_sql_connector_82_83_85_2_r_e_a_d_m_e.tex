@@ -1,0 +1,90 @@
+\chapter{About}
+\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e}{}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e}\index{About@{About}}
+\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md10}%
+\Hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md10}%
+ My\+Sql\+Connector is a C\# \href{https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/}{\texttt{ ADO.\+NET}} driver for \href{https://www.mysql.com/}{\texttt{ My\+SQL}}, \href{https://mariadb.org/}{\texttt{ Maria\+DB}}, \href{https://aws.amazon.com/rds/aurora/}{\texttt{ Amazon Aurora}}, \href{https://azure.microsoft.com/en-us/services/mysql/}{\texttt{ Azure Database for My\+SQL}} and other My\+SQL-\/compatible databases.
+
+More documentation is available at the \href{https://mysqlconnector.net/}{\texttt{ My\+Sql\+Connector website}}.\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md11}{}\doxysection{\texorpdfstring{How to Use}{How to Use}}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md11}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ set\ these\ values\ correctly\ for\ your\ database\ server}}
+\DoxyCodeLine{var\ builder\ =\ \textcolor{keyword}{new}\ MySqlConnectionStringBuilder}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ Server\ =\ \textcolor{stringliteral}{"{}your-\/server"{}},}
+\DoxyCodeLine{\ \ \ \ UserID\ =\ \textcolor{stringliteral}{"{}database-\/user"{}},}
+\DoxyCodeLine{\ \ \ \ Password\ =\ \textcolor{stringliteral}{"{}P@ssw0rd!"{}},}
+\DoxyCodeLine{\ \ \ \ Database\ =\ \textcolor{stringliteral}{"{}database-\/name"{}},}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ open\ a\ connection\ asynchronously}}
+\DoxyCodeLine{\textcolor{keyword}{using\ }var\ connection\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{_database_manager_methods_8cs_afdd8b7af50ca77b2600f0376ac521e42}{MySqlConnection}}(builder.ConnectionString);}
+\DoxyCodeLine{await\ connection.OpenAsync();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ create\ a\ DB\ command\ and\ set\ the\ SQL\ statement\ with\ parameters}}
+\DoxyCodeLine{\textcolor{keyword}{using\ }var\ command\ =\ connection.CreateCommand();}
+\DoxyCodeLine{command.CommandText\ =\ \textcolor{stringliteral}{@"{}SELECT\ *\ FROM\ orders\ WHERE\ order\_id\ =\ @OrderId;"{}};}
+\DoxyCodeLine{command.Parameters.AddWithValue(\textcolor{stringliteral}{"{}@OrderId"{}},\ orderId);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ execute\ the\ command\ and\ read\ the\ results}}
+\DoxyCodeLine{\textcolor{keyword}{using\ }var\ reader\ =\ await\ command.ExecuteReaderAsync();}
+\DoxyCodeLine{\textcolor{keywordflow}{while}\ (reader.Read())}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ var\ \textcolor{keywordtype}{id}\ =\ reader.GetInt32(\textcolor{stringliteral}{"{}order\_id"{}});}
+\DoxyCodeLine{\ \ \ \ var\ date\ =\ reader.GetDateTime(\textcolor{stringliteral}{"{}order\_date"{}});}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ ...}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{\texorpdfstring{ASP.\+NET}{ASP.\+NET}}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md12}
+For ASP.\+NET, use the \href{https://www.nuget.org/packages/MySqlConnector.DependencyInjection/}{\texttt{ My\+Sql\+Connector.\+Dependency\+Injection package}} to integrate with dependency injection and logging.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{var\ builder\ =\ WebApplication.CreateBuilder(args);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ use\ AddMySqlDataSource\ to\ configure\ MySqlConnector}}
+\DoxyCodeLine{builder.Services.AddMySqlDataSource(builder.Configuration.GetConnectionString(\textcolor{stringliteral}{"{}Default"{}}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{var\ app\ =\ builder.Build();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ use\ dependency\ injection\ to\ get\ a\ MySqlConnection\ in\ minimal\ APIs\ or\ in\ controllers}}
+\DoxyCodeLine{app.MapGet(\textcolor{stringliteral}{"{}/"{}},\ async\ (\mbox{\hyperlink{_database_manager_methods_8cs_afdd8b7af50ca77b2600f0376ac521e42}{MySqlConnection}}\ connection)\ =>}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ open\ and\ use\ the\ connection\ here}}
+\DoxyCodeLine{\ \ \ \ await\ connection.OpenAsync();}
+\DoxyCodeLine{\ \ \ \ await\ \textcolor{keyword}{using\ }var\ command\ =\ connection.CreateCommand();}
+\DoxyCodeLine{\ \ \ \ command.CommandText\ =\ \textcolor{stringliteral}{"{}SELECT\ name\ FROM\ users\ LIMIT\ 1"{}};}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Hello\ World:\ "{}}\ +\ await\ command.ExecuteScalarAsync();}
+\DoxyCodeLine{\});}
+\DoxyCodeLine{}
+\DoxyCodeLine{app.Run();}
+
+\end{DoxyCode}
+\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md13}{}\doxysection{\texorpdfstring{Key Features}{Key Features}}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md13}
+
+\begin{DoxyItemize}
+\item Full support for async I/O
+\item High performance
+\item Supports .NET Framework, .NET Core, and .NET 5.\+0+
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md14}{}\doxysection{\texorpdfstring{Main Types}{Main Types}}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md14}
+The main types provided by this library are\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily My\+Sql\+Connection} (implementation of {\ttfamily Db\+Connection})
+\item {\ttfamily My\+Sql\+Command} (implementation of {\ttfamily Db\+Command})
+\item {\ttfamily My\+Sql\+Data\+Reader} (implementation of {\ttfamily Db\+Data\+Reader})
+\item {\ttfamily My\+Sql\+Bulk\+Copy}
+\item {\ttfamily My\+Sql\+Bulk\+Loader}
+\item {\ttfamily My\+Sql\+Connection\+String\+Builder}
+\item {\ttfamily My\+Sql\+Connector\+Factory}
+\item {\ttfamily My\+Sql\+Data\+Adapter}
+\item {\ttfamily My\+Sql\+Exception}
+\item {\ttfamily My\+Sql\+Transaction} (implementation of {\ttfamily Db\+Transaction})
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md15}{}\doxysection{\texorpdfstring{Related Packages}{Related Packages}}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md15}
+
+\begin{DoxyItemize}
+\item Dependency Injection\+: \href{https://www.nuget.org/packages/MySqlConnector.DependencyInjection/}{\texttt{ My\+Sql\+Connector.\+Dependency\+Injection}}
+\item Entity Framework Core\+: \href{https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql/}{\texttt{ Pomelo.\+Entity\+Framework\+Core.\+My\+Sql}}
+\end{DoxyItemize}\hypertarget{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md16}{}\doxysection{\texorpdfstring{Feedback}{Feedback}}\label{md__c_1_2_users_2_x250_2_desktop_2_fany_2_omega_2_vinarstvi_2packages_2_my_sql_connector_82_83_85_2_r_e_a_d_m_e_autotoc_md16}
+My\+Sql\+Connector is released as open source under the \href{https://github.com/mysql-net/MySqlConnector/blob/master/LICENSE}{\texttt{ MIT license}}. Bug reports and contributions are welcome at \href{https://github.com/mysql-net/MySqlConnector}{\texttt{ the Git\+Hub repository}}. 

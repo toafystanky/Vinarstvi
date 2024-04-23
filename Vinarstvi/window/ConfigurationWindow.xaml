@@ -1,0 +1,67 @@
+<Window x:Class="Vinarstvi.window.ConfigurationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Vinarstvi"
+        mc:Ignorable="d"
+        Title="Configuration" Height="240" Width="400" Margin="20,20,0,0"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Margin" Value="10,5,0,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="150,5,0,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
+        <Style TargetType="PasswordBox">
+            <Setter Property="Margin" Value="150,5,0,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Width" Value="200"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="150,10,0,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Database Server:"/>
+        <TextBox x:Name="DatabaseServerTextBox" Grid.Row="0"/>
+
+        <Label Content="Database Port:" Grid.Row="1"/>
+        <TextBox x:Name="DatabasePortTextBox" Grid.Row="1"/>
+
+        <Label Content="Database Name:" Grid.Row="2"/>
+        <TextBox x:Name="DatabaseNameTextBox" Grid.Row="2"/>
+
+        <Label Content="Username:" Grid.Row="3"/>
+        <TextBox x:Name="UsernameTextBox" Grid.Row="3"/>
+
+        <Label Content="Password:" Grid.Row="4"/>
+        <PasswordBox x:Name="PasswordBox" Grid.Row="4"/>
+
+        <Button Content="Apply" Grid.Row="6" Click="ApplyButton_Click" Style="{StaticResource {x:Type Button}}"/>
+    </Grid>
+</Window>
